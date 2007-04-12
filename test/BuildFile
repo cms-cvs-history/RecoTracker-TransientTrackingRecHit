@@ -8,6 +8,6 @@
 <use name=boost>
 <use name=root>
 
-<flags SEAL_PLUGIN_NAME="TTRHBuilderTest">
+<flags EDM_PLUGIN=1>
 <library file=*.cc name=TTRHBuilderTest>
 </library>
