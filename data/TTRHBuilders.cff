@@ -8,6 +8,4 @@ include "RecoTracker/TkSeedingLayers/data/TTRHBuilderWithoutAngle4PixelTriplets.
 
 #TransientTRH builder with template
 include "RecoLocalTracker/SiPixelRecHits/data/PixelCPETemplateReco.cfi"
-es_module newTTRHB = ttrhbwr from "RecoTracker/TransientTrackingRecHit/data/TransientTrackingRecHitBuilder.cfi"
-replace newTTRHB.ComponentName = "WithAngleAndTemplate"
-replace newTTRHB.PixelCPE = "PixelCPETemplateReco"
+include "RecoTracker/TransientTrackingRecHit/data/TTRHBuilderWithTemplate.cfi"

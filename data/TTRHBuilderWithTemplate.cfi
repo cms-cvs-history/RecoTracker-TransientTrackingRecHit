@@ -1,0 +1,6 @@
+es_module TTRHBuilderAngleAndTemplate = TkTransientTrackingRecHitBuilderESProducer{	
+	string ComponentName = "WithAngleAndTemplate"
+	string StripCPE = "StripCPEfromTrackAngle"
+	string PixelCPE = "PixelCPETemplateReco"
+	string Matcher  = "StandardMatcher"
+}
