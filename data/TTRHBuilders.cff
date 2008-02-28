@@ -1,0 +1,13 @@
+include "RecoTracker/TransientTrackingRecHit/data/TransientTrackingRecHitBuilder.cfi"
+include "RecoTracker/TransientTrackingRecHit/data/TransientTrackingRecHitBuilderWithoutRefit.cfi"
+include "RecoTracker/TkSeedingLayers/data/TTRHBuilderWithoutAngle4MixedPairs.cfi"
+include "RecoTracker/TkSeedingLayers/data/TTRHBuilderWithoutAngle4MixedTriplets.cfi"
+include "RecoTracker/TkSeedingLayers/data/TTRHBuilderWithoutAngle4PixelPairs.cfi"
+include "RecoTracker/TkSeedingLayers/data/TTRHBuilderWithoutAngle4PixelTriplets.cfi"
+
+
+#TransientTRH builder with template
+include "RecoLocalTracker/SiPixelRecHits/data/PixelCPETemplateReco.cfi"
+es_module newTTRHB = ttrhbwr from "RecoTracker/TransientTrackingRecHit/data/TransientTrackingRecHitBuilder.cfi"
+replace newTTRHB.ComponentName = "WithAngleAndTemplate"
+replace newTTRHB.PixelCPE = "PixelCPETemplateReco"
