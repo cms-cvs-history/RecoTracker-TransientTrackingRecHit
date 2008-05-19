@@ -1,6 +1,6 @@
 es_module ttrhbwr= TkTransientTrackingRecHitBuilderESProducer{	
 	string ComponentName = "WithTrackAngle"
 	string StripCPE = "StripCPEfromTrackAngle"
-	string PixelCPE = "PixelCPEfromTrackAngle"
+	string PixelCPE = "PixelCPEGeneric"
 	string Matcher  = "StandardMatcher"
 }
