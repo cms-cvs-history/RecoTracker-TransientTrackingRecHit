@@ -1,6 +1,0 @@
-es_module ttrhbwor = TkTransientTrackingRecHitBuilderESProducer{	
-	string ComponentName = "WithoutRefit"
-	string StripCPE = "Fake"
-	string PixelCPE = "Fake"
-	string Matcher  = "Fake"
-}
