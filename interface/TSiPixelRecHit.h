@@ -71,18 +71,22 @@ public:
     return RecHitPointer( new TSiPixelRecHit( pos, err, det, cluster, cpe,weight, annealing));
   }
 
+  ///!  Probability of the compatibility of the track with the pixel cluster shape.
+  virtual float clusterProbability() {
+    return theHitData.clusterProbability( theClusterProbComputationFlag );
+  }
 
 private:
 
   SiPixelRecHit                         theHitData;
   const PixelClusterParameterEstimator* theCPE;
+  unsigned int                          theClusterProbComputationFlag;
 
   /// This constructor copy the TrackingRecHit, it should be used when the 
   /// TrackingRecHit exist already in some collection
   TSiPixelRecHit(const GeomDet * geom, const SiPixelRecHit* rh, 
 		 const PixelClusterParameterEstimator* cpe,
-		 float weight, float annealing) : 
-    TransientTrackingRecHit(geom, *rh, weight, annealing), theHitData(*rh), theCPE(cpe) {}
+		 float weight, float annealing) ;
 
   /// Creates the TrackingRecHit internally, avoids redundent cloning
   TSiPixelRecHit( const LocalPoint& pos, const LocalError& err,
@@ -90,11 +94,7 @@ private:
 		  //				const SiPixelCluster& clust,
 		  clusterRef clust,
 		  const PixelClusterParameterEstimator* cpe,
-		  float weight, float annealing) :
-    TransientTrackingRecHit(det,weight, annealing), 
-    theHitData( pos, err, det->geographicalId(), clust),
-    theCPE(cpe)
-  {}
+		  float weight, float annealing) ;
   
   //  TSiPixelRecHit( const TSiPixelRecHit& other ) :
   //  TransientTrackingRecHit( other.det()), 
