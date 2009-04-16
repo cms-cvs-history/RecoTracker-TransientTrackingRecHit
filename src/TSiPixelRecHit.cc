@@ -26,7 +26,7 @@ const GeomDetUnit* TSiPixelRecHit::detUnit() const
 TSiPixelRecHit::TSiPixelRecHit(const GeomDet * geom, const SiPixelRecHit* rh,
                                const PixelClusterParameterEstimator* cpe,
                                float weight, float annealing) :
-  TransientTrackingRecHit(geom, *rh, weight, annealing), theCPE(cpe)
+  TransientTrackingRecHit(geom, *rh, weight, annealing), theHitData(*rh), theCPE(cpe)
 {
 
   // Additionally, fill the SiPixeRecHitQuality from the PixelCPE.
